@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasikumar Nishantha - Data Scientist & Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Cursor Trail -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">RN</span>
+                <div class="logo-pulse"></div>
+            </div>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link" data-text="Home">Home</a>
+                <a href="#about" class="nav-link" data-text="About">About</a>
+                <a href="#projects" class="nav-link" data-text="Projects">Projects</a>
+                <a href="#skills" class="nav-link" data-text="Skills">Skills</a>
+                <a href="#contact" class="nav-link" data-text="Contact">Contact</a>
+            </nav>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-line">Hi, I'm</span>
+                    <span class="title-name">Rasikumar Nishantha</span>
+                </h1>
+                <div class="hero-subtitle">
+                    <span class="typewriter" data-words="Data Scientist,Problem Solver,ML Engineer,Python Developer"></span>
+                </div>
+                <p class="hero-description">
+                    Transforming complex data into actionable insights through advanced analytics, 
+                    machine learning, and innovative solutions. Let's build the future with data.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>View My Work</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <span>Get In Touch</span>
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card card-1">
+                    <i class="fab fa-python"></i>
+                    <span>Python</span>
+                </div>
+                <div class="floating-card card-2">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Analytics</span>
+                </div>
+                <div class="floating-card card-3">
+                    <i class="fas fa-brain"></i>
+                    <span>ML</span>
+                </div>
+                <div class="floating-card card-4">
+                    <i class="fas fa-database"></i>
+                    <span>SQL</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="image-frame">
+                        <img src="my.jpg" alt="Rasikumar Nishantha">
+                        <div class="image-glow"></div>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p class="intro-text">
+                            I'm a passionate Computer Science student at IIT, pursuing my degree from the 
+                            University of Westminster, with a deep fascination for turning data into meaningful stories.
+                        </p>
+                        <p>
+                            My journey in technology is driven by curiosity and the belief that data holds 
+                            the key to solving complex problems. I specialize in <strong>Python, Java, and SQL</strong>, 
+                            with a particular focus on <strong>machine learning and data analytics</strong>.
+                        </p>
+                        <p>
+                            When I'm not coding, you'll find me exploring new algorithms, contributing to 
+                            open-source projects, or diving deep into the latest research in artificial intelligence.
+                        </p>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="15">3</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="5">5</span>
+                            <span class="stat-label">Technologies Mastered</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="100">2</span>
+                            <span class="stat-label">Problems Solved</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle">A showcase of my technical skills and problem-solving abilities</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-category="ml">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">Machine Learning</div>
+                        <h3 class="project-title">Sentiment Analysis Engine</h3>
+                        <p class="project-description">
+                            Advanced NLP-powered sentiment classifier with real-time visualization dashboard. 
+                            Implements transformer models for superior accuracy in text analysis.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">NLTK</span>
+                            <span class="tech-tag">OpenAI API</span>
+                            <span class="tech-tag">Dashboard</span>
+                        </div>
+                        <div class="project-status">
+                            <i class="fas fa-code-branch"></i>
+                            <span>In Development</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="software">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">Software Development</div>
+                        <h3 class="project-title">Intelligent Task Manager</h3>
+                        <p class="project-description">
+                            CLI-based task management system with smart prioritization, deadline tracking, 
+                            and productivity analytics. Built with robust error handling and data persistence.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">CLI</span>
+                            <span class="tech-tag">File System</span>
+                        </div>
+                        <div class="project-status">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Completed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">Web Development</div>
+                        <h3 class="project-title">Dynamic Student Portal</h3>
+                        <p class="project-description">
+                            Modern, responsive web platform for student organizations featuring event management, 
+                            member registration, and interactive community features.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Responsive</span>
+                        </div>
+                        <div class="project-status">
+                            <i class="fas fa-users"></i>
+                            <span>Collaborative</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Skills & Expertise</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="category-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Programming Languages</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <span class="skill-name">Python</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Java</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">JavaScript</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">SQL</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Data & Analytics</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <span class="skill-name">Machine Learning</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Data Analysis</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">NLP</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Data Visualization</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Tools & Technologies</h3>
+                    <div class="tech-icons">
+                        <div class="tech-icon" title="Git">
+                            <i class="fab fa-git-alt"></i>
+                        </div>
+                        <div class="tech-icon" title="Jupyter">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="tech-icon" title="VS Code">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="tech-icon" title="Docker">
+                            <i class="fab fa-docker"></i>
+                        </div>
+                        <div class="tech-icon" title="AWS">
+                            <i class="fab fa-aws"></i>
+                        </div>
+                        <div class="tech-icon" title="TensorFlow">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Professional Skills</h3>
+                    <div class="soft-skills">
+                        <span class="soft-skill">Team Leadership</span>
+                        <span class="soft-skill">Problem Solving</span>
+                        <span class="soft-skill">Research</span>
+                        <span class="soft-skill">Public Speaking</span>
+                        <span class="soft-skill">Project Management</span>
+                        <span class="soft-skill">Critical Thinking</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Let's Create Something Amazing</h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle">Ready to turn your ideas into reality? Let's connect!</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <a href="mailto:rasikumarnishantha@gmail.com">rasikumarnishantha@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <a href="tel:+94764177746">+94 764 177 746</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <span>Sri Lanka</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form class="form" id="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name">Your Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">Your Email</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <label for="message">Your Message</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="social-section">
+                <h3>Find me on social media</h3>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/rasikumar-nishantha-77180a348/" class="social-link" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/NishaMax" class="social-link" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://youtube.com/@edunish0426?si=_MVdKK4ujm0oBOOz" class="social-link" title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.instagram.com/nisha_vision/" class="social-link" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">RN</span>
+                </div>
+                <p>&copy; 2025 Rasikumar Nishantha. Crafted with passion and code.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
