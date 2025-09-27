@@ -7,15 +7,56 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-    <!-- Cursor Trail -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                    <i data-lucide="book-open" class="w-5 h-5 text-white"></i>
+                </div>
+                <span class="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    EduNish
+                </span>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600 nav-link">Home</a>
+                <a href="downloads.html" class="text-gray-700 hover:text-blue-600">Resources</a>
+                <a href="quiz.html" id="quizNavBtnDesktop" class="text-gray-700 hover:text-blue-600">Quiz</a>
+                <a id="onlinePapersBtnDesktop" href="online_papers.html" class="hidden text-gray-700 hover:text-blue-600">Online Papers</a>
+                <a href="https://nishamax.github.io/PortfolioNish/" class="text-gray-700 hover:text-blue-600">Community</a>
+                <a id="loginBtnDesktop" href="landing.html" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full hover:shadow-lg">Login/SignUp</a>
+                <a id="profileBtnDesktop" href="profile.html"
+                    class="hidden px-4 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">
+                    My Profile
+                </a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden p-2">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-gray-700">Home</a>
+                <a href="downloads.html" class="block px-3 py-2 text-gray-700">Resources</a>
+                <a href="quiz.html" id="quizNavBtnMobile" class="block px-3 py-2 text-gray-700">Quiz</a>
+                <a id="onlinePapersBtnMobile" href="online_papers.html" class="hidden block px-3 py-2 text-gray-700">Online Papers</a>
+                <a href="https://nishamax.github.io/PortfolioNish/" class="block px-3 py-2 text-gray-700">Community</a>
+                <a id="loginBtnMobile" href="landing.html" class="block px-3 py-2 text-gray-800 hover:bg-gray-200">Login/SignUp</a>
+                <a id="profileBtnMobile" href="profile.html"
+                    class="hidden block px-4 py-2 text-blue-600 hover:underline">
+                    My Profile
+                </a>
+            </div>
+        </div>
+    </nav>
+
     <div class="cursor-dot" data-cursor-dot></div>
     <div class="cursor-outline" data-cursor-outline></div>
 
-    <!-- Navigation -->
-    <header class="navbar">
-        <div class="nav-container">
+    <header class="navbar" style="top: 64px;"> <div class="nav-container">
             <div class="nav-logo">
                 <span class="logo-text">RN</span>
                 <div class="logo-pulse"></div>
@@ -35,7 +76,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-background">
             <div class="gradient-orb orb-1"></div>
@@ -52,7 +92,7 @@
                     <span class="typewriter" data-words="Data Scientist,Problem Solver,ML Engineer,Python Developer"></span>
                 </div>
                 <p class="hero-description">
-                    Transforming complex data into actionable insights through advanced analytics, 
+                    Transforming complex data into actionable insights through advanced analytics,
                     machine learning, and innovative solutions. Let's build the future with data.
                 </p>
                 <div class="hero-buttons">
@@ -90,7 +130,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
             <div class="section-header">
@@ -107,16 +146,16 @@
                 <div class="about-content">
                     <div class="about-text">
                         <p class="intro-text">
-                            I'm a passionate Computer Science student at IIT, pursuing my degree from the 
+                            I'm a passionate Computer Science student at IIT, pursuing my degree from the
                             University of Westminster, with a deep fascination for turning data into meaningful stories.
                         </p>
                         <p>
-                            My journey in technology is driven by curiosity and the belief that data holds 
-                            the key to solving complex problems. I specialize in <strong>Python, Java, and SQL</strong>, 
+                            My journey in technology is driven by curiosity and the belief that data holds
+                            the key to solving complex problems. I specialize in <strong>Python, Java, and SQL</strong>,
                             with a particular focus on <strong>machine learning and data analytics</strong>.
                         </p>
                         <p>
-                            When I'm not coding, you'll find me exploring new algorithms, contributing to 
+                            When I'm not coding, you'll find me exploring new algorithms, contributing to
                             open-source projects, or diving deep into the latest research in artificial intelligence.
                         </p>
                     </div>
@@ -139,7 +178,6 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section class="projects" id="projects">
         <div class="container">
             <div class="section-header">
@@ -161,7 +199,7 @@
                         <div class="project-category">Machine Learning</div>
                         <h3 class="project-title">Sentiment Analysis Engine</h3>
                         <p class="project-description">
-                            Advanced NLP-powered sentiment classifier with real-time visualization dashboard. 
+                            Advanced NLP-powered sentiment classifier with real-time visualization dashboard.
                             Implements transformer models for superior accuracy in text analysis.
                         </p>
                         <div class="project-tech">
@@ -190,7 +228,7 @@
                         <div class="project-category">Software Development</div>
                         <h3 class="project-title">Intelligent Task Manager</h3>
                         <p class="project-description">
-                            CLI-based task management system with smart prioritization, deadline tracking, 
+                            CLI-based task management system with smart prioritization, deadline tracking,
                             and productivity analytics. Built with robust error handling and data persistence.
                         </p>
                         <div class="project-tech">
@@ -218,7 +256,7 @@
                         <div class="project-category">Web Development</div>
                         <h3 class="project-title">Dynamic Student Portal</h3>
                         <p class="project-description">
-                            Modern, responsive web platform for student organizations featuring event management, 
+                            Modern, responsive web platform for student organizations featuring event management,
                             member registration, and interactive community features.
                         </p>
                         <div class="project-tech">
@@ -237,7 +275,6 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section class="skills" id="skills">
         <div class="container">
             <div class="section-header">
@@ -356,7 +393,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-header">
@@ -397,15 +433,15 @@
                 <div class="contact-form">
                     <form class="form" id="contact-form">
                         <div class="form-group">
-                            <input type="text" id="name" name="name" required>
+                            <input type="text" id="name" name="name" required placeholder=" ">
                             <label for="name">Your Name</label>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="email" required placeholder=" ">
                             <label for="email">Your Email</label>
                         </div>
                         <div class="form-group">
-                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
                             <label for="message">Your Message</label>
                         </div>
                         <button type="submit" class="btn btn-primary btn-full">
@@ -438,7 +474,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -451,5 +486,17 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Script to initialize Lucide icons
+        lucide.createIcons();
+
+        // Script for mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
