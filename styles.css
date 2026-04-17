@@ -1449,3 +1449,45 @@ section .container > * {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+/* Professional skills: show as two-column bullet list (desktop) and single column on mobile */
+.soft-skills {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem 1rem;
+    list-style: none;
+    margin-top: 1rem;
+    padding: 0;
+}
+
+.soft-skill {
+    position: relative;
+    padding: 0.6rem 0.8rem 0.6rem 2rem;
+    background: transparent; /* no pill background, keep section card clean */
+    color: var(--text-main) !important;
+    font-weight: 600;
+    border-radius: 8px;
+    display: inline-block;
+    align-items: center;
+    line-height: 1.2;
+}
+
+.soft-skill::before {
+    content: '';
+    position: absolute;
+    left: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #6c63ff 0%, #48a9fe 100%);
+    box-shadow: 0 4px 12px rgba(72, 169, 254, 0.08);
+}
+
+/* Small screens: single column bullets centered */
+@media (max-width: 768px) {
+    .soft-skills {
+        grid-template-columns: 1fr;
+    }
+}
