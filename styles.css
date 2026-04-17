@@ -947,38 +947,23 @@ body {
 
 .tech-icon {
     aspect-ratio: 1;
-    background: var(--bg-secondary);
+    background: var(--card-bg) !important;
     border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: var(--transition);
     cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.03);
+    color: var(--text-main);
 }
-
 .tech-icon:hover {
-    background: var(--primary-gradient);
-    color: white;
+    background: var(--primary-gradient) !important;
+    color: #fff !important;
     transform: scale(1.05);
 }
-
 .tech-icon i {
     font-size: 1.5rem;
-}
-
-.soft-skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.soft-skill {
-    background: var(--primary-gradient);
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 25px;
-    font-size: 0.9rem;
-    font-weight: 500;
 }
 
 /* Contact Section */
@@ -1052,10 +1037,11 @@ body {
 
 /* Contact Form */
 .contact-form {
-    background: white;
+    background: var(--card-bg) !important;
     padding: 2rem;
     border-radius: 20px;
     box-shadow: var(--shadow-md);
+    color: var(--text-main) !important;
 }
 
 .form-group {
@@ -1087,8 +1073,9 @@ body {
     color: var(--text-secondary);
     transition: var(--transition);
     pointer-events: none;
-    background: white;
+    background: var(--card-bg);
     padding: 0 0.5rem;
+    border-radius: 6px;
 }
 
 .form-group input:focus + label,
@@ -1171,9 +1158,11 @@ body {
     margin-top: 2rem;
 }
 .techskill-card {
-    background: #fff;
+    /* Use theme card background instead of white to ensure dark mode consistency */
+    background: var(--card-bg) !important;
+    color: var(--text-main) !important;
     border-radius: 18px;
-    box-shadow: 0 4px 24px rgba(80, 80, 180, 0.07);
+    box-shadow: 0 4px 24px rgba(80, 80, 180, 0.05);
     padding: 2rem 1.5rem;
     display: flex;
     flex-direction: column;
@@ -1182,21 +1171,30 @@ body {
 }
 .techskill-card:hover {
     transform: translateY(-6px) scale(1.03);
-    box-shadow: 0 8px 32px rgba(80, 80, 180, 0.13);
+    box-shadow: 0 8px 32px rgba(80, 80, 180, 0.08);
 }
 .techskill-icon {
     font-size: 2.2rem;
     color: #6c63ff;
     margin-bottom: 1rem;
+    /* keep icon area subtle on dark bg */
+    background: transparent;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
 }
 .techskill-card h3 {
     margin: 0 0 0.5rem 0;
     font-size: 1.15rem;
     font-weight: 600;
+    color: var(--text-main) !important;
 }
 .techskill-card p {
     margin: 0;
-    color: #444;
+    color: var(--text-secondary) !important;
     font-size: 1rem;
 }
 
