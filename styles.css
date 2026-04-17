@@ -707,11 +707,11 @@ body {
 }
 
 .stat-item {
-    text-align: center;
-    padding: 1.5rem;
-    background: white;
+    background: var(--card-bg) !important;
+    color: var(--text-main) !important;
     border-radius: 15px;
-    box-shadow: var(--shadow-md);
+    padding: 1.5rem;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.35);
 }
 
 .stat-number {
@@ -743,12 +743,12 @@ body {
 }
 
 .project-card {
-    background: white;
+    background: var(--card-bg) !important;
+    color: var(--text-main) !important;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: var(--shadow-md);
-    transition: var(--transition);
-    cursor: pointer;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .project-card:hover {
@@ -810,6 +810,7 @@ body {
 
 .project-content {
     padding: 2rem;
+    color: var(--text-main) !important;
 }
 
 .project-category {
