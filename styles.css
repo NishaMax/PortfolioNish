@@ -39,6 +39,132 @@
     --shadow-glow: 0 0 30px rgba(102, 126, 234, 0.3);
 }
 
+/* Consolidated dark variables and targeted component styles (replaces duplicate :root and broad overrides) */
+:root {
+    --background: #0f1115;
+    --card-bg: #171826;
+    --text-main: #eaf0ff;
+    --text-secondary: #aab3c7;
+    --primary-gradient: linear-gradient(90deg, #6c63ff 0%, #48a9fe 100%);
+    --section-line: #2f3346;
+    --box-shadow: 0 6px 30px rgba(0,0,0,0.35);
+}
+
+/* Page base (dark) */
+body {
+    background: var(--background);
+    color: var(--text-main);
+    font-family: var(--font-primary);
+    line-height: 1.7;
+    cursor: auto; /* restore default cursor */
+    overflow-x: hidden;
+}
+
+/* Keep wrapper transparent so sections can breathe */
+.container {
+    background: transparent;
+}
+
+/* Target only actual cards/containers that should use card background */
+.project-card,
+.techskill-card,
+.contact-item,
+.contact-form,
+.about-image .image-frame,
+.footer,
+.footer .footer-content {
+    background: var(--card-bg);
+    color: var(--text-main);
+    box-shadow: var(--box-shadow);
+    border-radius: 16px;
+}
+
+/* Ensure sections themselves remain transparent unless explicitly styled */
+section { background: transparent; }
+
+/* Inputs & textareas should match card styling */
+input, textarea {
+    background: var(--card-bg);
+    color: var(--text-main);
+    border: 1px solid rgba(255,255,255,0.04);
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+}
+input::placeholder, textarea::placeholder, label { color: var(--text-secondary); }
+
+/* Navbar — dark and subtle */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(23,24,36,0.95);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+    z-index: 1000;
+}
+
+/* Section divider */
+.section-line {
+    background: linear-gradient(90deg, var(--section-line) 0%, #6c63ff 50%, var(--section-line) 100%);
+    height: 4px;
+    border-radius: 2px;
+    margin: 1rem auto;
+    width: 80px;
+}
+
+/* Keep primary buttons consistent */
+.btn, .btn-primary, .btn-outline, .btn-full {
+    background: var(--primary-gradient);
+    color: #fff;
+    border: none;
+}
+
+/* --- Dark Mode Styles (Default) --- */
+:root {
+    --background: #181a20;
+    --card-bg: #23263a;
+    --text-main: #f3f4f6;
+    --text-secondary: #b0b3c7;
+    --primary-gradient: linear-gradient(90deg, #6c63ff 0%, #48a9fe 100%);
+    --section-line: #35374a;
+    --box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+}
+body {
+    background: var(--background);
+    color: var(--text-main);
+}
+
+.container, .project-card, .techskill-card, .skill-category, .footer, .form, .about-image .image-frame {
+    background: var(--card-bg) !important;
+    color: var(--text-main) !important;
+    box-shadow: var(--box-shadow);
+}
+.section-title, .section-subtitle, .project-title, .project-category, .project-description, .techskill-card h3, .techskill-card p, .skill-category h3, .soft-skill, .stat-label, .stat-number {
+    color: var(--text-main) !important;
+}
+.section-line {
+    background: var(--section-line) !important;
+}
+.navbar, .footer {
+    background: var(--card-bg) !important;
+}
+input, textarea {
+    background: #23263a !important;
+    color: #f3f4f6 !important;
+    border: 1px solid #35374a !important;
+}
+input::placeholder, textarea::placeholder, label {
+    color: #b0b3c7 !important;
+}
+.btn, .btn-primary, .btn-outline, .btn-full {
+    background: var(--primary-gradient) !important;
+    color: #fff !important;
+    border: none !important;
+}
+.tech-icon, .category-icon, .project-status i, .project-links i, .skill-category i {
+    color: #6c63ff !important;
+}
+
 /* Global Styles */
 * {
     margin: 0;
@@ -874,49 +1000,54 @@ body {
 }
 
 .contact-item {
+    background: #23263a !important;
+    color: #f3f4f6 !important;
+    border-radius: 24px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+    padding: 2rem 2rem 1.5rem 2rem;
     display: flex;
     align-items: center;
-    gap: 1rem;
-    padding: 1.5rem;
-    background: white;
-    border-radius: 15px;
-    box-shadow: var(--shadow-md);
-    transition: var(--transition);
-}
-
-.contact-item:hover {
-    transform: translateX(10px);
-    box-shadow: var(--shadow-lg);
+    min-width: 260px;
+    min-height: 90px;
 }
 
 .contact-icon {
-    width: 60px;
-    height: 60px;
-    background: var(--primary-gradient);
-    border-radius: 15px;
+    background: linear-gradient(135deg, #6c63ff 0%, #48a9fe 100%);
+    color: #fff;
+    border-radius: 16px;
+    width: 56px;
+    height: 56px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-size: 1.2rem;
+    font-size: 2rem;
+    margin-right: 1.5rem;
 }
 
 .contact-details h4 {
+    color: #f3f4f6 !important;
+    margin: 0 0 0.25rem 0;
     font-size: 1.1rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: var(--text-primary);
 }
 
-.contact-details a,
-.contact-details span {
-    color: var(--text-secondary);
+.contact-details a, .contact-details span {
+    color: #b0b3c7 !important;
+    font-size: 1rem;
     text-decoration: none;
-    transition: var(--transition);
 }
 
-.contact-details a:hover {
-    color: var(--primary-color);
+/* Fix contact form card background */
+.contact-form {
+    background: #23263a !important;
+    border-radius: 28px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+    padding: 2rem 2rem 1.5rem 2rem;
+}
+
+/* Fix section background for contact */
+.contact {
+    background: #23263a !important;
 }
 
 /* Contact Form */
@@ -1067,6 +1198,145 @@ body {
     margin: 0;
     color: #444;
     font-size: 1rem;
+}
+
+/* --- Force Full Dark Mode for All Elements --- */
+html, body {
+    background: #181a20 !important;
+    color: #f3f4f6 !important;
+}
+
+section, .container, .project-card, .techskill-card, .skill-category, .footer, .form, .about-image .image-frame, .skills-grid, .projects-grid, .about-grid {
+    background: #23263a !important;
+    color: #f3f4f6 !important;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+}
+
+/* Remove any white backgrounds from cards and sections */
+.project-card, .techskill-card, .skill-category {
+    background: #23263a !important;
+}
+
+/* Section header and lines */
+.section-title, .section-subtitle, .project-title, .project-category, .project-description, .techskill-card h3, .techskill-card p, .skill-category h3, .soft-skill, .stat-label, .stat-number {
+    color: #f3f4f6 !important;
+}
+.section-line {
+    background: #35374a !important;
+}
+
+input, textarea {
+    background: #23263a !important;
+    color: #f3f4f6 !important;
+    border: 1px solid #35374a !important;
+}
+input::placeholder, textarea::placeholder, label {
+    color: #b0b3c7 !important;
+}
+
+.btn, .btn-primary, .btn-outline, .btn-full {
+    background: linear-gradient(90deg, #6c63ff 0%, #48a9fe 100%) !important;
+    color: #fff !important;
+    border: none !important;
+}
+
+.tech-icon, .category-icon, .project-status i, .project-links i, .skill-category i {
+    color: #6c63ff !important;
+}
+
+/* Remove any white backgrounds from .skills-grid and .projects-grid */
+.skills-grid, .projects-grid {
+    background: transparent !important;
+}
+
+/* --- Fix Section Break/Divider for Dark Mode --- */
+.section-line {
+    background: linear-gradient(90deg, #35374a 0%, #6c63ff 50%, #35374a 100%) !important;
+    height: 4px;
+    border-radius: 2px;
+    margin: 1.5rem auto 1rem auto;
+    width: 80px;
+    opacity: 1;
+}
+
+/* Ensure section backgrounds are consistent */
+section, .container {
+    background: #23263a !important;
+}
+
+/* Optional: Add a subtle shadow to section headers for separation */
+.section-header {
+    box-shadow: 0 2px 16px rgba(80, 80, 180, 0.07);
+    border-radius: 12px;
+    padding-bottom: 0.5rem;
+}
+
+/* --- Layering & Alignment fixes --- */
+/* Prevent container elements from looking like stacked cards */
+section .container {
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 3rem var(--container-padding);
+}
+
+/* Section header should not be boxed */
+.section-header {
+    background: transparent !important;
+    box-shadow: none !important;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Footer container cleanup */
+.footer .container {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Consistent grid layout and alignment for card groups */
+.projects-grid,
+.techskills-grid,
+.skills-grid,
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    align-items: start;
+}
+
+/* Ensure individual cards use consistent spacing and don't stack shadows */
+.project-card,
+.techskill-card,
+.skill-category,
+.contact-item,
+.contact-form {
+    margin: 0;
+    padding: 1.6rem;
+    border-radius: 14px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+}
+
+/* Avoid double shadows by preventing both container and immediate child having shadows */
+section .container > * {
+    box-shadow: none;
+}
+
+/* Slightly lift card content so they visually separate from background */
+.project-card .project-content,
+.techskill-card,
+.skill-category,
+.contact-item {
+    transform: translateY(0);
+}
+
+/* Keep large section padding consistent */
+.technical-skills, .projects, .about, .skills, .contact {
+    padding: 60px 0;
+}
+
+/* Footer spacing */
+.footer {
+    padding: 3rem 0;
 }
 
 /* Responsive Design */
