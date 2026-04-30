@@ -233,25 +233,47 @@ document.addEventListener('DOMContentLoaded', function() {
     if (contactForm) {
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
+
             const formData = new FormData(contactForm);
             const button = contactForm.querySelector('button[type="submit"]');
             const originalText = button.innerHTML;
-            
+
             // Show loading state
             button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             button.disabled = true;
-            
-            // Simulate form submission (replace with actual endpoint)
-            setTimeout(() => {
-                // Show success message
-                showNotification('Message sent successfully!', 'success');
-                contactForm.reset();
-                
-                // Reset button
+
+            try {
+                const response = await fetch(contactForm.action || '/.netlify/functions/contact', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    showNotification('Message sent successfully! I will reply to your email shortly.', 'success');
+                    contactForm.reset();
+                } else {
+                    // Try to parse error message
+                    let errorMsg = 'There was a problem sending your message. Please try again later.';
+                    try {
+                        const data = await response.json();
+                        if (data && data.error) errorMsg = data.error;
+                        else if (data && data.errors && data.errors.length) errorMsg = data.errors.map(err => err.message).join(', ');
+                    } catch (err) {
+                        // ignore parse errors
+                    }
+                    showNotification(errorMsg, 'error');
+                }
+            } catch (err) {
+                console.error('Contact form submit error:', err);
+                showNotification('Network error. Please check your connection and try again.', 'error');
+            } finally {
+                // Reset button state
                 button.innerHTML = originalText;
                 button.disabled = false;
-            }, 2000);
+            }
         });
     }
 
